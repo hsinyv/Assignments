@@ -1,0 +1,45 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: m dell, m, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.14.0.0
+Toolchain Path:  E:\keilv5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARM.DLL V5.14.0.0
+Dialog DLL:      DARMSS9.DLL V1.07
+Target DLL:      Segger\JLTAgdi.dll V1.59.0.0
+Dialog DLL:      TARMSS9.DLL V1.05
+ 
+<h2>Project:</h2>
+F:\_FILES\ARMProj\v5test\test.uvproj
+Project File Date:  12/01/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(8): warning:  #1-D: last line of file ends without a newline
+   }
+main.c: 1 warning, 0 errors
+linking...
+.\Objects\test.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+.\Objects\test.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+Program Size: Code=456 RO-data=0 RW-data=0 ZI-data=1160  
+Finished: 0 information, 2 warning and 0 error messages.
+FromELF: creating hex file...
+After Build - User command #1: fromelf --bin -o test.bin test.axf
+"test.axf": Error: Q0122E: Could not open file 'test.axf': No such file or directory
+Finished: 0 information, 0 warning and 1 error messages.
+".\Objects\test.axf" - 0 Error(s), 3 Warning(s).
+</pre>
+</body>
+</html>

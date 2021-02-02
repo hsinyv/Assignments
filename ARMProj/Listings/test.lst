@@ -1,0 +1,144 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;???????????
+    2 00000000         ;/*-------------------------------------------------- */
+                       
+    3 00000000         ;/*          constant define        
+    4 00000000         ;/*-------------------------------------------------- */
+                       
+    5 00000000 00000004 
+                       var_1   EQU              4           ;
+    6 00000000 00000005 
+                       var_2   EQU              5           ;
+    7 00000000 00000001 
+                       ptr     EQU              1           ;
+    8 00000000 00000005 
+                       con     EQU              5
+    9 00000000         ;/*--------------------------------------------------*/
+   10 00000000         ;/*       code           
+   11 00000000         ;/*---------------------------------------------------*/
+                       
+   12 00000000                 area             main,code,readwrite
+   13 00000000                 code32
+   14 00000000         start
+   15 00000000 E3A00001        mov              r0, #ptr
+   16 00000004 E3A01004        mov              r1, #var_1
+   17 00000008 E3A02005        mov              r2, #var_2
+   18 0000000C 0BFFFFFF        bleq             judge
+   19 00000010         judge
+   20 00000010 E3500005        cmp              r0, #con
+   21 00000014 E28F3000        adr              r3, vector
+   22 00000018 E793F100        ldr              pc, [r3,r0,LSL#2] ;???????
+   23 0000001C         vector                               ;?????
+   24 0000001C 00000000        dcd              func1
+   25 00000020 00000000        dcd              func2
+   26 00000024         func1
+   27 00000024 E0810002        add              r0, r1, r2
+   28 00000028 E12FFF1E        bx               lr
+   29 0000002C         func2
+   30 0000002C E0410002        sub              r0, r1, r2
+   31 00000030 E12FFF1E        bx               lr
+   32 00000034                 end
+Command Line: --debug --xref --diag_suppress=9931 --cpu=ARM920T --apcs=interwor
+k --depend=.\objects\test.d -o.\objects\test.o -IE:\keilv5\ARM\RV31\INC -IE:\ke
+ilv5\ARM\CMSIS\Include -IE:\keilv5\ARM\Inc\Samsung --predefine="__UVISION_VERSI
+ON SETA 514" --list=.\listings\test.lst test.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+func1 00000024
+
+Symbol: func1
+   Definitions
+      At line 26 in file test.s
+   Uses
+      At line 24 in file test.s
+Comment: func1 used once
+func2 0000002C
+
+Symbol: func2
+   Definitions
+      At line 29 in file test.s
+   Uses
+      At line 25 in file test.s
+Comment: func2 used once
+judge 00000010
+
+Symbol: judge
+   Definitions
+      At line 19 in file test.s
+   Uses
+      At line 18 in file test.s
+Comment: judge used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 12 in file test.s
+   Uses
+      None
+Comment: main unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 14 in file test.s
+   Uses
+      None
+Comment: start unused
+vector 0000001C
+
+Symbol: vector
+   Definitions
+      At line 23 in file test.s
+   Uses
+      At line 21 in file test.s
+Comment: vector used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+con 00000005
+
+Symbol: con
+   Definitions
+      At line 8 in file test.s
+   Uses
+      At line 20 in file test.s
+Comment: con used once
+ptr 00000001
+
+Symbol: ptr
+   Definitions
+      At line 7 in file test.s
+   Uses
+      At line 15 in file test.s
+Comment: ptr used once
+var_1 00000004
+
+Symbol: var_1
+   Definitions
+      At line 5 in file test.s
+   Uses
+      At line 16 in file test.s
+Comment: var_1 used once
+var_2 00000005
+
+Symbol: var_2
+   Definitions
+      At line 6 in file test.s
+   Uses
+      At line 17 in file test.s
+Comment: var_2 used once
+4 symbols
+341 symbols in table

@@ -1,0 +1,2 @@
+Dependencies for Project 'arm_asm', Target 'Target 1': (DO NOT MODIFY !)
+F (.\test.s)(0x5DFA39FA)(--cpu ARM920T -g --apcs=interwork -I E:\keilv5\ARM\RV31\INC-I E:\keilv5\ARM\CMSIS\Include-I E:\keilv5\ARM\Inc\Samsung--pd "__UVISION_VERSION SETA 514"--list .\listings\test.lst --xref -o .\objects\test.o --depend .\objects\test.d)
